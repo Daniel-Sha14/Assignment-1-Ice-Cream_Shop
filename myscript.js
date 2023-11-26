@@ -21,3 +21,29 @@ function includeHTML() {
     }
   }
 }
+
+formalert();
+f<script>
+function yesnoCheck(that) {
+  document.getElementById("ifYes").style.display =
+    that.value === "cone" || that.value === "cup" || that.value === "pop" ? "block" : "none";
+}
+
+function showFields(selected) {
+  // Reset all fields
+  document.getElementById("coneFields").style.display = "none";
+  document.getElementById("cupFields").style.display = "none";
+  document.getElementById("popFields").style.display = "none";
+
+  // Show fields based on selected option
+  if (selected.value === "cone") {
+    document.getElementById("coneFields").style.display = "block";
+  } else if (selected.value === "cup") {
+    document.getElementById("cupFields").style.display = "block";
+  } else if (selected.value === "pop") {
+    document.getElementById("popFields").style.display = "block";
+  }
+  // Add similar conditions for other ice cream types
+}
+
+
