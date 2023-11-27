@@ -1,9 +1,19 @@
-img {
+.otherimage {
     
-    width: 100%;
+    object-fit:cover;
+    width: 400px;
     height: 250px;
-    box-sizing:border-box;
+    
+    
    
+}
+
+
+.cover{
+    
+    max-width: 100%;
+    width:1540px;
+    height:auto;
 }
 .font {
     font-family: 'Montserrat', sans-serif;
@@ -243,4 +253,3 @@ footer {
         align-content: flex-end;
     }
 }
-
