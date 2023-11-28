@@ -106,19 +106,48 @@
                                     <input type="checkbox" id="nuts" name="Nuts" />
                                     <label for="nuts" style="color:dimgray">Nuts</label>
                                 </div>
+
+                                <div>
+                                    <input type="checkbox" id="marsh" name="Marshmallows" />
+                                    <label for="marsh" style="color:dimgray">Marshmallows</label>
+                                </div>
+
+                                <div>
+                                    <input type="checkbox" id="bananas" name="Bananas" />
+                                    <label for="bananas" style="color:dimgray">Bananas</label>
+                                </div>
+
+                                <div>
+                                    <input type="checkbox" id="strawberry" name="Strawberry" />
+                                    <label for="strawberry" style="color:dimgray">Strawberries</label>
+                                </div>
+
+                                <div>
+                                    <input type="checkbox" id="blueberries" name="Blueberries" />
+                                    <label for="blueberries" style="color:dimgray">Blueberries</label>
+                                </div>
+
+                                <div>
+                                    <input type="checkbox" id="sprinkles" name="Sprinkles" />
+                                    <label for="sprinkles" style="color:dimgray">Sprinkles</label>
+                                </div>
+
+                                
                             </section>
                             <div class="spacing">
 
                             </div>
                             <section>
-                                <select onchange="showFields(this);" id="iceCreamType" name="iceCreamType">
+                                <select id="iceCreamType" name="iceCreamType">
                                     <option value=""></option>
-                                    <option value="cone">Cone</option>
-                                    <option value="cup">Cup</option>
-                                    <option value="pop">Popsicle</option>
-                                    <option value="wafer">Wafer</option>
-                                    <option value="bread">Bread</option>
-                                    <option value="healthy">Healthier Choice</option>
+                                    <option id="cone">Cone</option>
+                                    <option id="cup">Cup</option>
+                                    <option id="pop">Popsicle</option>
+                                    <option id="wafer">Wafer</option>
+                                    <option id="bread">Bread</option>
+                                    <option id="healthy">Healthier Choice</option>
+                                    <option id="cake">Ice Cream Cake</option>
+                                    <option id="tub">Ice Cream Tub</option>
                                 </select>
                                 
                                 <div id="coneFields" style="display: none;">
@@ -146,6 +175,9 @@
                                 </div>
                             </section>
                             <section>
+                                
+                            </section>
+                            <section>
                                 <label class="font" style="color:royalblue">Any Preferences or Comments?</label>
                         
                                 <input type="text" placeholder="Any Comments? Yes/No" name="Preferences" id="text" required>
@@ -156,6 +188,7 @@
 
                 
         </section>
+        
         
         <div class="spacing">
 
@@ -195,7 +228,7 @@
 
 
 
-        <script src="myscript.js"></script>
+        <script src="order.js"></script>
 
             
     </body>

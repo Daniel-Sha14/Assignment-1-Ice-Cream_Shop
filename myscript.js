@@ -30,12 +30,12 @@ function yesnoCheck(that) {
 }
 
 function showFields(selected) {
-  // Reset all fields
+
   document.getElementById("coneFields").style.display = "none";
   document.getElementById("cupFields").style.display = "none";
   document.getElementById("popFields").style.display = "none";
 
-  // Show fields based on selected option
+
   if (selected.value === "cone") {
     document.getElementById("coneFields").style.display = "block";
   } else if (selected.value === "cup") {
@@ -43,7 +43,24 @@ function showFields(selected) {
   } else if (selected.value === "pop") {
     document.getElementById("popFields").style.display = "block";
   }
-  // Add similar conditions for other ice cream types
+  
+}
+
+function myFunction() {
+  var input, filter, ul, li, a, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myUL");
+  li = ul.getElementsByTagName("li");
+  for (i = 0; i < li.length; i++) {
+      a = li[i].getElementsByTagName("a")[0];
+      txtValue = a.textContent || a.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          li[i].style.display = "";
+      } else {
+          li[i].style.display = "none";
+      }
+  }
 }
 
 
