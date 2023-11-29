@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>DANEL Ice Cream</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
 
     <body>
@@ -20,7 +21,7 @@
                 </div>
                 <div>
                     <fieldset style="background-color: white">
-                        <form action = "/some-url" method="POST">
+                        <form action="insertlabel.php" id="privtelabel" method="POST">
                             <label for = "name" class="font" style="background-color: white; color:royalblue">Name
                                 <input type = "text" 
                                 placeholder = "Enter your name" 
@@ -53,33 +54,26 @@
 
                             </div>
                             <section>
+                                <form action="insertlabel.php" id="privtelabel" method="POST">
                                 <label class="font" style="color:royalblue">Which Package would you like to order?</label>
                             
                                 <div>
-                                  <input type="checkbox" name="package" id="party" name="party" checked />
-                                  <label for="party" style="color:dimgray">Party Package</label>
+                                    <select name='package' id='package' required>
+                                        <option value="Party Package">Party Package ($80)</option>
+                                        <option value="Graduation Package">Party Package ($100)</option>
+                                        <option value="Picnic Package">Picnic Package ($50)</option>
+                                        <option value="Casual Package">Casual Package ($35)</option>
+                                        <option value=""></option>
+                                        
+                                      </select> 
+                                </div>
+                                <div>
+
+                                  
+                                      <br> Quantity: <input type="text" name="quantity" id='quantity' required><br> 
+                                       
                                   
                                 </div>
-                              
-                                <div>
-                                  <input type="checkbox" name="package" id="grad" name="grad" />
-                                  <label for="grad" style="color:dimgray">Graduation Package</label>
-                                  
-                                </div>
-                
-                                <div>
-                                    <input type="checkbox" name="package" id="picnic" name="picnic" />
-                                    <label for="picnic" style="color:dimgray">Picnic Package</label>
-                                </div>
-                                <div>
-                                    <input type="checkbox" name="package"  id="casual" name="casual" />
-                                    <label for="casual" style="color:dimgray">Casual Package</label>
-                                </div>
-                                <div>
-                                    <input type="checkbox" name="nil" id="NA" name="NA" checked />
-                                    <label for="NA" style="color:dimgray">Not Buying</label>
-                                    
-                                  </div>
                             </section>
                             <div class="spacing">
 
@@ -138,7 +132,7 @@
 
                             </div>
                             <section>
-                                <select id="iceCreamType" name="iceCreamType">
+                                <select id="iceCreamType" onchange="on_change(this)" name="iceCreamType">
                                     <option value=""></option>
                                     <option id="cone">Cone</option>
                                     <option id="cup">Cup</option>
@@ -150,31 +144,132 @@
                                     <option id="tub">Ice Cream Tub</option>
                                 </select>
                                 
-                                <div id="coneFields" style="display: none;">
+                                <div id="coneFields" name="Cones" style="display: none;" >
                                     <label for="car">Cone Type?</label>
-                                    <select name="conetype" id="coneType">
-                                        <option value="og">Original Cone</option>
-                                        <option value="charcoal">Charcoal Cone</option>
-                                        <option value="matcha">Matcha Cone</option>
+                                    <select name="cones" id="cones" required>
+                                        <option value=""></option>
+                                        <option value="Original Cone">Original Cone</option>
+                                        <option value="Charcoal Cone">Charcoal Cone</option>
+                                        <option value="Matcha Cone">Matcha Cone</option>
                                     </select>
+                                   
                                     <label for="car">What Flavor?</label> 
-                                    <select name="coneflavor" id="coneFlavor">
-                                        <option value="vanilla">Vanilla</option>
-                                        <option value="choco">Chocolate</option>
+                                    <select name="coneflavours" id="coneflavors" required>
+                                        <option value="Vanilla">Vanilla</option>
+                                        <option value="Chocolate">Chocolate</option>
                                         <option value="strawberry">Strawberry</option>
-                                        <option value="cookies">Cookies & Cream</option>
-                                        <option value="mint">Mint Chocolate</option>
-                                        <option value="bubblegum">BubbleGum</option>
+                                        <option value="Cookies & Cream">Cookies & Cream</option>
+                                        <option value="Mint Chocolate">Mint Chocolate</option>
+                                        <option value="Bubblegum">BubbleGum</option>
                                     </select>
                                     <label for="car">What Type of Scoop?</label> 
-                                    <select name="conescoop" id="coneScoop">
-                                        <option value="single">Single Scoop</option>
-                                        <option value="double">Double Scoop</option>
-                                        <option value="triple">Triple Scoop</option>
+                                    <select name="conescoops" id="conescoops" required>
+                                        <option value="Single Scoop">Single Scoop</option>
+                                        <option value="Double Scoop">Double Scoop</option>
+                                        <option value="Triple Scoop">Triple Scoop</option>
                                     </select>
                                 </div>
+                                <div id="cupFields" name="Cups" style="display: none;">
+                                    <label for="car">Cup Size?</label>
+                                    <select name="cups" id="cups" required>
+                                        <option value=""></option>
+                                        <option value="Small">Small</option>
+                                        <option value="Medium">Medium</option>
+                                        <option value="Large">Large</option>
+                                    </select>
+
+                                </div>
+                                <div id="popFields" name="Popsicles" style="display: none;">
+                                    <label for="car">Popsicle Size?</label>
+                                    <select name="popsicles" id="popsicles" required>
+                                        <option value=""></option>
+                                        <option value="Small">Small</option>
+                                        <option value="Medium">Medium</option>
+                                        <option value="Large">Large</option>
+                                    </select>
+
+                                </div>
+                                <div id="waferFields" name="Wafer" style="display: none;" >
+                                    <label for="car">Wafer Type?</label>
+                                    <select name="wafers" id="wafers" required>
+                                        <option value=""></option>
+                                        <option value="Original Wafer">Original Wafer</option>
+                                        <option value="Charcoal Wafer">Charcoal Wafer</option>
+                                        <option value="Matcha Wafer">Matcha Wafer</option>
+                                    </select>
+                                   
+                                    <label for="car">What Flavor?</label> 
+                                    <select name="waferflavors" id="waferflavors" required>
+                                        <option value="Vanilla">Vanilla</option>
+                                        <option value="Chocolate">Chocolate</option>
+                                        <option value="strawberry">Strawberry</option>
+                                        <option value="Cookies & Cream">Cookies & Cream</option>
+                                        <option value="Mint Chocolate">Mint Chocolate</option>
+                                        <option value="Bubblegum">BubbleGum</option>
+                                    </select>
+                                    <label for="car">What Type of Scoop?</label> 
+                                    <select name="waferscoops" id="waferscoops" required>
+                                        <option value="Single Scoop">Single Scoop</option>
+                                        <option value="Double Scoop">Double Scoop</option>
+                                        <option value="Triple Scoop">Triple Scoop</option>
+                                    </select>
+                                </div>
+                                <div id="breadFields" name="Bread" style="display: none;">
+                                    <label for="car">Bread type?</label>
+                                    <select name="breads" id="breads" required>
+                                        <option value=""></option>
+                                        <option value="Original Bread">Original Bread</option>
+                                        <option value="Rainbow Bread">Rainbow Bread</option>
+                                        <option value="Pandan Bread">Pandan Bread</option>
+                                    </select>
+
+                                    <label for="car">What Flavor?</label> 
+                                    <select name="breadflavors" id="breadflavors" required>
+                                        <option value="Vanilla">Vanilla</option>
+                                        <option value="Chocolate">Chocolate</option>
+                                        <option value="strawberry">Strawberry</option>
+                                        <option value="Cookies & Cream">Cookies & Cream</option>
+                                        <option value="Mint Chocolate">Mint Chocolate</option>
+                                        <option value="Bubblegum">BubbleGum</option>
+                                    </select>
+
+                                </div>
+                                <div id="healthFields" name="Healthier Choice" style="display: none;" >
+                                    <label for="car">What Flavor?</label> 
+                                    <select name="healthierflavors" id="healthierflavors" required>
+                                        <option value="Vanilla">Vanilla (Less Sugar)</option>
+                                        <option value="Chocolate">Chocolate (Less Sugar)</option>
+                                        <option value="strawberry">Strawberry (Less Sugar)</option>
+                                    </select>
+                                    <label for="car">Cup Size?</label>
+                                    <select name="hcups" id="hcups" required>
+                                        <option value=""></option>
+                                        <option value="Small">Small</option>
+                                        <option value="Medium">Medium</option>
+                                        <option value="Large">Large</option>
+                                    </select>
+                                </div>
+                                <div id="cakeFields" name="Ice Cream Cake" style="display: none;" >
+                                    <label for="car">What Flavor?</label> 
+                                    <select name="cakes" id="cakes" required>
+                                        <option value="Vanilla">Vanilla</option>
+                                        <option value="Chocolate">Chocolate</option>
+                                        <option value="strawberry">Strawberry</option>
+                                    </select>
+                                    <label for="car">Cake Weight/Size?</label>
+                                    <select name="cakeskg" id="cakeskg" required>
+                                        <option value=""></option>
+                                        <option value="1/4 kg">1/4 kg</option>
+                                        <option value="1/2 kg">1/2 kg</option>
+                                        <option value="1 kg">1 kg</option>
+                                    </select>
+                                </div>
+                                <br> Price: <span id="totalCost"></span> </br>
+                                </form>
+                               
                             </section>
                             <section>
+
                                 
                             </section>
                             <section>
@@ -182,12 +277,20 @@
                         
                                 <input type="text" placeholder="Any Comments? Yes/No" name="Preferences" id="text" required>
                             </section>
+                            <section>
+                                <a href="order2.html"><input type="submit" id="submit button" name="submit"></a>
+                            </section>
                             
                         </fieldset>
                 </div>
 
                 
         </section>
+        <form action="insertlabel.php" id="privtelabel" method="POST">
+            
+            
+          </form>
+        
         
         
         <div class="spacing">
@@ -224,11 +327,12 @@
             
 
         </sector>
-       
+        
 
 
 
         <script src="order.js"></script>
+        <script src="myscript.js"></script>
 
             
     </body>
