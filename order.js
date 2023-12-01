@@ -44,7 +44,7 @@ tubs.addEventListener('change', calculateTotal);
 toppingsContainer.addEventListener('change', calculateTotal);
 
 //Storing the data in an object
-var package_prices = {}; //Noticed I replaced the [] with {}
+var package_prices = {}; 
 package_prices['Party Package'] = 80;
 package_prices['Graduation Package'] = 100;
 package_prices['Picnic Package'] = 50;
@@ -145,37 +145,9 @@ var toppingsPrices = {
   bananas: 1.20,
   marshmallows: 1.00,
   sprinkles: 0.50
-  // Add more toppings with prices as needed
+ 
 };
 
-
-
-//the calculate function is used to calculate the total money the user spent on the ice creams
-/*function calculateTotal() {
-   
-  var unitCost = package_prices[package.value] || 0;
-  var qty = quantity.value || 0;
-  var cone = cone_prices[cones.value] || 0;
-  var coneflavor = flavor_prices[coneflavors.value] || 0;
-  var conescoop = type_of_scoop[conescoops.value] || 0;
-  var cup = cup_sizes[cups.value] || 0;
-  var popsicle = pop_sizes[popsicles.value] || 0;
-  var wafer = type_of_wafer[wafers.value] || 0;
-  var waferflavor = wflavor_prices[waferflavors.value] || 0;
-  var waferscoop = wtype_of_scoop[waferscoops.value] || 0;
-  var bread = type_of_bread[breads.value] || 0;
-  var breadflavor = bflavor_prices[breadflavors.value] || 0;
-  var healthierflavor = hflavor_prices[healthierflavors.value] || 0;
-  var hsize = healthy_sizes[hcups.value] || 0;
-  var cake = icakes[cakes.value] || 0;
-  var cakekg = icakeskg[cakeskg.value] || 0;
-  var tub = itubs[tubs.value] || 0;
-
-  
-  totalCost.textContent = `Total cost: $${(unitCost * qty) + cone + coneflavor + conescoop + cup + popsicle + wafer
-+ waferflavor + waferscoop + bread + breadflavor + healthierflavor + hsize + cake + cakekg + tub}`;
-}
-calculateTotal();*/
 function calculateTotal() {
     console.log("calculateTotal function called!");
     console.log("Before tub assignment. tubs.value:", tubs.value);
@@ -202,13 +174,13 @@ function calculateTotal() {
     var tub = itubs[tubs.value] || 0;
     //var topping = toppings_list[topping.value] || 0;
   
-    // Get the package price
+    // Getting the package price
     var unitCost = package_prices[selectedPackage] || 0;
   
-    // Calculate total cost
+    // Calculating total cost
     var totalPrice = unitCost * qty;
   
-    // Display the total cost
+    // Displaying the total cost
     totalCost.textContent = `Total cost: $${totalPrice + cone + coneflavor + conescoop + cup + popsicle + wafer
         + waferflavor + waferscoop + bread + breadflavor + healthierflavor + hsize + cake + cakekg + tub}`;
         var selectedToppings = Array.from(document.getElementById('toppings').selectedOptions).map(option => option.value);
@@ -216,7 +188,7 @@ function calculateTotal() {
         // Calculate total cost based on selected toppings
         var toppingsCost = selectedToppings.reduce((acc, topping) => acc + (toppingsPrices[topping] || 0), 0);
       
-        // Update the total cost element
+        // Updating the total cost element with toppings
         totalCost.textContent = `Total cost: $${((unitCost * qty) + cone + coneflavor + conescoop + cup + popsicle + wafer
           + waferflavor + waferscoop + bread + breadflavor + healthierflavor + hsize + cake + cakekg + tub + toppingsCost).toFixed(2)}`;
   }
