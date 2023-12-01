@@ -22,13 +22,6 @@ function includeHTML() {
   }
 }
 
-formalert();
-f<script>
-function yesnoCheck(that) {
-  document.getElementById("ifYes").style.display =
-    that.value === "cone" || that.value === "cup" || that.value === "pop" ? "block" : "none";
-}
-
 function showFields(selected) {
 
   document.getElementById("coneFields").style.display = "none";

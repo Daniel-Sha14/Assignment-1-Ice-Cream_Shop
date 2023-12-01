@@ -213,6 +213,8 @@ flex-direction: column;
 }
 
 }
+
+
               
             
 .otherimage {
@@ -292,6 +294,13 @@ flex-direction: column;
 
 .container{
     
+}
+/*For checkout page*/
+.container4{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .centerbutton button {
@@ -379,6 +388,15 @@ body {
 	flex-direction: column;
     align-items:flex-start;
     
+}
+/*For the checkout page*/
+.imageside4 {
+  text-align:center;
+  
+}
+.flex-img2 {
+  display: block;
+  margin: 0 auto;
 }
 
 .container2 {

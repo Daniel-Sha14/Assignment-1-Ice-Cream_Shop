@@ -59,11 +59,12 @@
                             
                                 <div>
                                     <select name='package' id='package' required>
+                                        <option value="">Select Package</option>
                                         <option value="Party Package">Party Package ($80)</option>
-                                        <option value="Graduation Package">Party Package ($100)</option>
+                                        <option value="Graduation Package">Graduation Package ($100)</option>
                                         <option value="Picnic Package">Picnic Package ($50)</option>
                                         <option value="Casual Package">Casual Package ($35)</option>
-                                        <option value=""></option>
+                                        
                                         
                                       </select> 
                                 </div>
@@ -78,60 +79,12 @@
                             <div class="spacing">
 
                             </div>
-                            <section>
-                                <label class="font" style="color:royalblue">Toppings</label>
-                              
-                                <div>
-                                  <input type="checkbox" id="whipped cream" name="Whipped Cream" checked />
-                                  <label for="whipped cream" style="color:dimgray">Whipped Cream</label>
-                                </div>
-                              
-                                <div>
-                                  <input type="checkbox" id="cherries" name="Cherries" />
-                                  <label for="cherries" style="color:dimgray">Cherries</label>
-                                </div>
-                
-                                <div>
-                                    <input type="checkbox" id="chocolate syrup" name="Chocolate Syrup" />
-                                    <label for="chocolate syrup" style="color:dimgray">Chocolate Syrup</label>
-                                </div>
-                
-                                <div>
-                                    <input type="checkbox" id="nuts" name="Nuts" />
-                                    <label for="nuts" style="color:dimgray">Nuts</label>
-                                </div>
-
-                                <div>
-                                    <input type="checkbox" id="marsh" name="Marshmallows" />
-                                    <label for="marsh" style="color:dimgray">Marshmallows</label>
-                                </div>
-
-                                <div>
-                                    <input type="checkbox" id="bananas" name="Bananas" />
-                                    <label for="bananas" style="color:dimgray">Bananas</label>
-                                </div>
-
-                                <div>
-                                    <input type="checkbox" id="strawberry" name="Strawberry" />
-                                    <label for="strawberry" style="color:dimgray">Strawberries</label>
-                                </div>
-
-                                <div>
-                                    <input type="checkbox" id="blueberries" name="Blueberries" />
-                                    <label for="blueberries" style="color:dimgray">Blueberries</label>
-                                </div>
-
-                                <div>
-                                    <input type="checkbox" id="sprinkles" name="Sprinkles" />
-                                    <label for="sprinkles" style="color:dimgray">Sprinkles</label>
-                                </div>
-
-                                
-                            </section>
+                           
                             <div class="spacing">
 
                             </div>
                             <section>
+                                <br> Products:<br> 
                                 <select id="iceCreamType" onchange="on_change(this)" name="iceCreamType">
                                     <option value=""></option>
                                     <option id="cone">Cone</option>
@@ -254,7 +207,7 @@
                                     <select name="cakes" id="cakes" required>
                                         <option value="Vanilla">Vanilla</option>
                                         <option value="Chocolate">Chocolate</option>
-                                        <option value="strawberry">Strawberry</option>
+                                        <option value="Strawberry">Strawberry</option>
                                     </select>
                                     <label for="car">Cake Weight/Size?</label>
                                     <select name="cakeskg" id="cakeskg" required>
@@ -264,6 +217,35 @@
                                         <option value="1 kg">1 kg</option>
                                     </select>
                                 </div>
+                                <div id="tubFields" name="Ice Cream Tub" style="display: none;" >
+                                    <label for="car">What Flavor?</label> 
+                                    <select name="tubs" id="tubs" required>
+                                        <option value=""></option>
+                                        <option value="Vanilla">Vanilla</option>
+                                        <option value="Chocolate">Chocolate</option>
+                                        <option value="Strawberry">Strawberry</option>
+                                        
+                                    </select>
+                                    
+                                </div>
+                                <div class="spacing"></div>
+
+                                <div id="toppings-container">
+                                    <label for="toppings" class="font">Toppings</label>
+                                    <select multiple name="toppings" id="toppings">
+                                      <option value="whippedCream">Whipped Cream</option>
+                                      <option value="cherries">Cherries</option>
+                                      <option value="nuts">Nuts</option>
+                                      <option value="csyrup">Chocolate Syrup</option>
+                                      <option value="strawberries">Strawberries</option>
+                                      <option value="blueberries">Blueberries</option>
+                                      <option value="bananas">Bananas</option>
+                                      <option value="marshmallows">Marshmallows</option>
+                                      <option value="sprinkles">Sprinkles</option>
+                                      <!-- Add more topping options as needed -->
+                                    </select>
+                                  </div>
+                                <!--<br> Toppings: </br>-->
                                 <br> Price: <span id="totalCost"></span> </br>
                                 </form>
                                
@@ -278,6 +260,7 @@
                                 <input type="text" placeholder="Any Comments? Yes/No" name="Preferences" id="text" required>
                             </section>
                             <section>
+                                
                                 <a href="order2.html"><input type="submit" id="submit button" name="submit"></a>
                             </section>
                             
