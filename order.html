@@ -54,7 +54,7 @@
 
                             </div>
                             <section>
-                                <form action="insertlabel.php" id="privtelabel" method="POST">
+                                <form action="order2.html" method="get">
                                 <label class="font" style="color:royalblue">Which Package would you like to order?</label>
                             
                                 <div>
@@ -260,22 +260,16 @@
                                 <input type="text" placeholder="Any Comments? Yes/No" name="Preferences" id="text" required>
                             </section>
                             <section>
-                                
+                                <!--Going to another pages to fill up card info-->
                                 <a href="order2.html"><input type="submit" id="submit button" name="submit"></a>
                             </section>
-                            
-                        </fieldset>
+                        </form>
+                    </fieldset>
                 </div>
 
                 
         </section>
-        <form action="insertlabel.php" id="privtelabel" method="POST">
-            
-            
-          </form>
-        
-        
-        
+       
         <div class="spacing">
 
         </div>
@@ -316,6 +310,34 @@
 
         <script src="order.js"></script>
         <script src="myscript.js"></script>
+        <script>
+            // Form validation function
+            function validateForm() {
+                var name = document.getElementById("name").value;
+                var email = document.getElementById("email").value;
+                var quantity = document.getElementById("quantity").value;
+    
+                // Add more validation checks as needed
+                if (name === "") {
+                    alert("Please enter your name");
+                    return false;
+                }
+    
+                if (email === "") {
+                    alert("Please enter your email");
+                    return false;
+                }
+    
+                if (quantity === "") {
+                    alert("Please enter the quantity");
+                    return false;
+                }
+    
+                // Add more validation checks as needed
+    
+                return true; // Submit the form if all validations pass
+            }
+        </script>
 
             
     </body>

@@ -1,7 +1,8 @@
 let slideIndex = 0;
             showSlides();
-            
+            //to show that the images are shuffling
             function showSlides() {
+              //delcaring elements
               let i;
               let slides = document.getElementsByClassName("mySlides");
               let dots = document.getElementsByClassName("dot");

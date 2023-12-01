@@ -1,3 +1,5 @@
+//Function for the header so that in every page we could just insert the script myscript instead of copying the whole header again,
+//makes the code cleaner and neater
 includeHTML();
 function includeHTML() {
   var z, i, a, file, xhttp;
@@ -39,6 +41,7 @@ function showFields(selected) {
   
 }
 
+//Function used for the filter/search function
 function myFunction() {
   var input, filter, ul, li, a, i, txtValue;
   input = document.getElementById("myInput");
